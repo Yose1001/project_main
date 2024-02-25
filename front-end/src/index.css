@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@200;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg {
+  background-color: black;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.664);
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    color: #c19556;
+  }

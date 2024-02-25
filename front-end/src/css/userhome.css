@@ -1,0 +1,10 @@
+.Uflex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  .gap-4 > * + * {
+    margin-top: 1rem;
+  }
+  
