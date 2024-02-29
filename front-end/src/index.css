@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Krub:wght@200;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Krub:wght@200;400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,11 +9,20 @@
 }
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.664);
-    height: 70px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    color: #c19556;
-  }
+  background-color: rgb(22, 22, 22);
+  height: 70px;
+  width: 100%;
+  /* position: fixed; */
+  color: #c19556;
+}
+
+/* .navbar:hover {
+  background-color: #c19556; 
+  color: white; 
+} */
+
+.Food {
+  font-family: "Dancing Script", cursive;
+  color: #e7b269;
+  font-size: 40px;
+}

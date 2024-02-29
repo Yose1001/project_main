@@ -4,21 +4,29 @@ import React from "react";
 export default function TodoCard(props) {
   const { el, openModal, setTrigger } = props;
 
-  const statusColor = el.status==='PENDING' ? 'bg-pink-300' 
-    : el.status==='DOING' ? 'bg-blue-300' : 'bg-lime-300'
-  const hdlDelete = async e => {
+  const statusColor =
+    el.status === "vip"
+      ? "bg-pink-300"
+      : el.status === "medium"
+      ? "bg-blue-300"
+      : "bg-lime-300";
+
+  const hdlDelete = async (e) => {
     try {
-      e.stopPropagation()
-      const token = localStorage.getItem('token')
-      let rs = await axios.delete(`http://localhost:8889/Reservation/${el.id}`, {
-        headers : { Authorization : `Bearer ${token}`}
-      })
-      alert('Delete successful') 
-      setTrigger(prv=>!prv)
+      e.stopPropagation();
+      const token = localStorage.getItem("token");
+      let rs = await axios.delete(
+        `http://localhost:8889/Reservation/${el.id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      alert("Delete successful");
+      setTrigger((prv) => !prv);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
+  };
 
   return (
     <div
@@ -28,8 +36,10 @@ export default function TodoCard(props) {
     >
       <div className="card-body">
         <div className="flex justify-between">
-          {/* <h2 className="card-title">{el.title}</h2> */}
-          <div className="badge badge-secondary" onClick={hdlDelete}>delete</div>
+          <h2 className="card-title">{el.title}</h2>
+          <div className="badge badge-secondary" onClick={hdlDelete}>
+            delete
+          </div>
         </div>
         <div className="flex">
           <p>Due-date : {new Date(el.dueDate).toDateString()}</p>

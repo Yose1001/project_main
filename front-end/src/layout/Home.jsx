@@ -1,5 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
 
@@ -17,23 +15,8 @@ import menu1 from "../media/rare-beef.jpg";
 import menu2 from "../media/salmon.jpg";
 import menu3 from "../media/berries.jpg";
 import menu4 from "../media/another-beef.jpg";
-import table from "../media/table-crowd.jpg";
 
 export default function Home() {
-  const [todos, setTodos] = useState([]);
-  const [trigger, setTrigger] = useState(false);
-
-  useEffect(() => {
-    const run = async () => {
-      let token = localStorage.getItem("token");
-      const rs = await axios.get("http://localhost:8889/todos", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      setTodos(rs.data.todos);
-    };
-    run();
-  }, [trigger]);
-
   const showOrHideDiv1 = () => {
     var x = document.getElementById("showOrHide1");
 
@@ -99,7 +82,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="main" id="home">
         <div className="Hcenter">
           <br />

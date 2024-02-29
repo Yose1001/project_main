@@ -32,22 +32,24 @@ export default function UserHome() {
   };
 
   return (
-    <div className="Uflex gap-4">
-      <div className="text-center text-2xl text-blue-500">Your jobs</div>
-      <ModalEdit
-        el={Reservation[editIdx]}
-        closeModal={closeModal}
-        setTrigger={setTrigger}
-      />
-      <div className="flex flex-col gap-4">
-        {Reservation.map((el) => (
-          <TodoCard
-            key={el.id}
-            el={el}
-            openModal={openModal}
-            setTrigger={setTrigger}
-          />
-        ))}
+    <div className="Uim">
+      <div className="Uflex gap-4">
+        <div className="text-center text-2xl text-blue-500"></div>
+        <ModalEdit
+          el={Reservation[editIdx]}
+          closeModal={closeModal}
+          setTrigger={setTrigger}
+        />
+        <div className="flex flex-col gap-4">
+          {Reservation.map((el) => (
+            <TodoCard
+              key={el.id}
+              el={el}
+              openModal={openModal}
+              setTrigger={setTrigger}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
